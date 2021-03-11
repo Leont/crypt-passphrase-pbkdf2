@@ -30,7 +30,7 @@ sub new {
 
 sub ab64_encode {
 	my $input = shift;
-	my $output = encode_base64($input);
+	my $output = encode_base64($input, '');
 	$output =~ tr/+/./;
 	$output =~ s/=+$//;
 	return $output;

@@ -54,8 +54,8 @@ my $decode_regex = qr/ \A \$ pbkdf2- (\w+) \$ (\d+) \$ ([^\$]+) \$ ([^\$]*) \z /
 sub needs_rehash {
 	my ($self, $hash) = @_;
 	my ($type, $iterations, $salt64, $hash64) = $hash =~ $decode_regex or return 1;
-	return 1 if $type ne $self->{type} or $iterations < $self->{iterations};
-	return 1 if length ab64_decode($salt64) < $self->{salt_size};
+	return 1 if $type ne $self->{type} or $iterations != $self->{iterations};
+	return 1 if length ab64_decode($salt64) != $self->{salt_size};
 	return;
 }
 

@@ -46,7 +46,7 @@ sub hash_password {
 	my ($self, $password) = @_;
 	my $salt = $self->random_bytes($self->{salt_size});
 	my $hash = derive($param_for_type{ $self->{type} }, $password, $salt, $self->{iterations});
-	return join '$', "\$pbkdf2-$self->{type}", $self->{iterations}, ab64_encode($salt, ''), ab64_encode($hash, '');
+	return join '$', "\$pbkdf2-$self->{type}", $self->{iterations}, ab64_encode($salt), ab64_encode($hash);
 }
 
 my $decode_regex = qr/ \A \$ pbkdf2- (\w+) \$ (\d+) \$ ([^\$]+) \$ ([^\$]*) \z /x;

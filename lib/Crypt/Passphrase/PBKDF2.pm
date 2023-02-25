@@ -23,7 +23,7 @@ sub new {
 	croak '' unless exists $param_for_type{$type};
 	return bless {
 		salt_size  => $args{salt_size} || 16,
-		iterations => $args{iterations} || 10000,
+		iterations => $args{iterations} || 100_000,
 		type       => $type,
 	}, $class;
 }
@@ -87,7 +87,7 @@ This can be any of C<sha1>, C<sha224>, C<sha256> (default), C<sha384> or C<sha51
 
 =item * iterations
 
-This will be the iteration count, defaulting to C<10000>.
+This will be the iteration count, defaulting to C<100000>.
 
 =item * salt_size
 

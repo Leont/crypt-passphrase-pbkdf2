@@ -1,6 +1,8 @@
 Revision history for Crypt-Passphrase-PBKDF2
 
 {{$NEXT}}
+
+0.002     2023-02-27 22:16:22+01:00 Europe/Amsterdam
           - Increase default iterations to 100000
           - Make needs_rehash method stricter
 

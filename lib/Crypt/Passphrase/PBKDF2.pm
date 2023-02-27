@@ -75,6 +75,10 @@ sub verify_password {
 
 # ABSTRACT: A PBKDF2 encoder for Crypt::Passphrase
 
+=head1 DESCRIPTION
+
+This class implements a PBKDF2 encoder for Crypt::Passphrase. It allows for any SHA-1 or SHA-2 hash, and any number of iterations.
+
 =method new(%args)
 
 This creates a new PBKDF2 encoder, it takes named parameters that are all optional. Note that some defaults are likely to change at some point in the future, as computers get progressively more powerful and cryptoanalysis gets more advanced.

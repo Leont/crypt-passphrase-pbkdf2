@@ -20,7 +20,7 @@ my %param_for_type =(
 sub new {
 	my ($class, %args) = @_;
 	my $type = $args{type} || 'sha256';
-	croak '' unless exists $param_for_type{$type};
+	croak "Hash type $type not supported" unless exists $param_for_type{$type};
 	return bless {
 		salt_size  => $args{salt_size} || 16,
 		iterations => $args{iterations} || 100_000,

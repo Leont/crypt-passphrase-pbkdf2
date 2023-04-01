@@ -30,16 +30,12 @@ sub new {
 
 sub ab64_encode {
 	my $input = shift;
-	my $output = encode_base64($input, '');
-	$output =~ tr/+/./;
-	$output =~ s/=+$//;
-	return $output;
+	return encode_base64($input, '') =~ tr/+=/./dr;
 }
 
 sub ab64_decode {
 	my $input = shift;
-	$input =~ tr/./+/;
-	return decode_base64($input);
+	return decode_base64($input =~ tr/./+/r);
 }
 
 sub hash_password {

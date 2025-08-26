@@ -59,7 +59,7 @@ sub needs_rehash {
 	return;
 }
 
-sub crypt_types {
+sub crypt_subtypes {
 	return map { "pbkdf2-$_" } keys %param_for_type;
 }
 

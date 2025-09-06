@@ -1,6 +1,8 @@
 Revision history for Crypt-Passphrase-PBKDF2
 
 {{$NEXT}}
+
+0.004     2025-09-06 12:46:33+02:00 Europe/Brussels
           - Fix needs_rehash tests
           - Improve documentation
 
